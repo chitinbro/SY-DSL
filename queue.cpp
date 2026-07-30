@@ -70,6 +70,31 @@ public:
         }
         cout << endl;
     }
+ void IsFull(){
+        if (R == size_ - 1){
+           cout << "Queue Is Full"<<endl;
+               return;
+        }
+        cout << "Queue Is Not Full"<<endl;
+        return;
+            }
+ void IsEmpty(){
+        if (F == -1 || F > R){
+           cout << "Queue Is Empty"<<endl;
+               return;
+        }
+        cout << "Queue Is Not Empty"<<endl;
+        return ;
+            }
+ void Peek(){
+      if (F == -1)
+        {
+            cout << "Queue is empty." << endl;
+            return;
+        }
+cout<< queue_1[F]<<endl;
+     return;
+            }
 };
 
 int main()
@@ -83,7 +108,10 @@ int main()
         cout << "\n1. Enqueue";
         cout << "\n2. Dequeue";
         cout << "\n3. Display";
-        cout << "\n4. Exit";
+        cout << "\n4. Peek";
+        cout << "\n5. IsEmpty";
+        cout << "\n6. IsFull";
+        cout << "\n7. Exit";
         cout << "\nEnter your choice: ";
         cin >> choice;
 
@@ -102,8 +130,17 @@ int main()
         case 3:
             q.display();
             break;
-
         case 4:
+            q.Peek();
+            break;
+        case 5:
+            q.IsEmpty();
+            break;
+        case 6:
+            q.IsFull();
+            break;
+
+        case 7:
             cout << "Program Ended." << endl;
             break;
 
